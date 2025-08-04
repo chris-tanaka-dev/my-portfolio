@@ -16,8 +16,18 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/* Dark mode variables */
+.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+  --primary: #60a5fa;
+  --primary-dark: #2563eb;
+  --accent: #fbbf24;
+}
+
+/* System preference fallback */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not(.light) {
     --background: #0a0a0a;
     --foreground: #ededed;
     --primary: #60a5fa;
@@ -26,50 +36,228 @@
   }
 }
 
+/* Enhanced focus and hover states for better accessibility */
+a,
+button,
+[tabindex]:not([tabindex='-1']) {
+  transition:
+    color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    background 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+a:hover,
+button:hover {
+  transform: translateY(-1px);
+}
+
+a:focus-visible,
+button:focus-visible {
+  box-shadow: 0 0 0 3px var(--primary);
+  border-radius: var(--border-radius);
+}
+
+/* Improved focus states for dark mode */
+.dark a:focus-visible,
+.dark button:focus-visible {
+  box-shadow: 0 0 0 3px #60a5fa;
+}
+
+/* Enhanced text contrast overrides */
+.dark h1,
+.dark .text-gray-900.dark\:text-white {
+  color: #ffffff !important;
+}
+
+.dark h2,
+.dark .text-gray-900.dark\:text-white {
+  color: #ffffff !important;
+}
+
+.dark .text-gray-700.dark\:text-gray-200 {
+  color: #e5e7eb !important;
+}
+
+.dark .text-gray-600.dark\:text-gray-300 {
+  color: #d1d5db !important;
+}
+
+/* Enhanced background contrast for better accessibility */
+.dark .bg-gray-100.dark\:bg-gray-800 {
+  background-color: #374151 !important;
+}
+
+.dark .bg-gray-50.dark\:bg-gray-800 {
+  background-color: #374151 !important;
+}
+
+.dark .bg-blue-100.dark\:bg-blue-900 {
+  background-color: #1e3a8a !important;
+}
+
+/* Ensure card backgrounds are properly dark */
+.dark .bg-white.dark\:bg-gray-900 {
+  background-color: #111827 !important;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   transition:
-    background 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Animations */
+/* Smooth page transitions */
+.page-transition {
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+.page-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.page-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Enhanced animations */
 @keyframes fade-in {
   from {
     opacity: 0;
-    transform: translateY(16px);
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: none;
   }
 }
+
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .animate-fade-in {
-  animation: fade-in 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
+
 .animate-fade-in-slow {
-  animation: fade-in 1.2s cubic-bezier(0.4, 0, 0.2, 1) both;
+  animation: fade-in 1.4s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
-/* Focus and hover states */
-a,
-button,
-[tabindex]:not([tabindex='-1']) {
-  transition:
-    color 0.2s,
-    background 0.2s,
-    box-shadow 0.2s;
-  outline: none;
-}
-a:focus-visible,
-button:focus-visible {
-  box-shadow: 0 0 0 2px var(--primary);
-  border-radius: var(--border-radius);
+.animate-slide-in {
+  animation: slide-in-from-bottom 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
-/* Section spacing */
-section {
-  scroll-margin-top: 6rem;
+.animate-scale-in {
+  animation: scale-in 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Staggered animations for lists */
+.animate-stagger > * {
+  animation: fade-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-stagger > *:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.animate-stagger > *:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.animate-stagger > *:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.animate-stagger > *:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.animate-stagger > *:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.animate-stagger > *:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced card hover effects */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode card hover effects */
+.dark .card-hover:hover {
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Loading states */
+.loading {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+/* Responsive text sizing */
+@media (max-width: 640px) {
+  .text-responsive {
+    font-size: 0.875rem;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: rgba(75, 85, 99, 0.5);
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgba(75, 85, 99, 0.7);
 }

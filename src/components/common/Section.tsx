@@ -8,9 +8,9 @@ interface SectionProps {
 }
 
 const Section: React.FC<SectionProps> = ({ id, title, className = '', children }) => (
-  <section id={id} className={`py-12 sm:py-20 ${className}`}>
+  <section id={id} className={`py-16 sm:py-24 ${className}`}>
     {title && (
-      <h2 className="text-3xl font-bold mb-8 text-center text-gray-900 dark:text-gray-100 tracking-tight animate-fade-in">
+      <h2 className="text-4xl font-bold mb-12 text-center text-gray-900 dark:text-white tracking-tight animate-fade-in">
         {title}
       </h2>
     )}
