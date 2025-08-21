@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Christopher Tanaka - Portfolio Website
 
-## Getting Started
+A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
 
-First, run the development server:
+## 🏗️ Project Structure
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+```
+/src/app/
+├── layout.tsx          # Root layout with navigation and global styles
+├── page.tsx            # Home page - Landing and overview
+├── about/              # About page - Experience, education, and skills overview
+├── skills/             # Skills page - Detailed technical skills breakdown
+├── contact/            # Contact page - Contact form and methods
+├── globals.css         # Global styles and animations
+└── favicon.ico         # Site favicon
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🚀 Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Modern Design**: Glass-morphism UI with gradient accents
+- **Responsive**: Mobile-first design approach
+- **Performance**: Optimized animations and smooth transitions
+- **Dark Theme**: Elegant dark mode with customizable accent colors
+- **SEO Ready**: Proper meta tags and semantic HTML
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠️ Tech Stack
 
-## Learn More
+- **Framework**: Next.js 14 (App Router)
+- **Language**: TypeScript
+- **Styling**: Tailwind CSS
+- **Icons**: React Icons (Material Design)
+- **Animations**: CSS animations with Tailwind utilities
 
-To learn more about Next.js, take a look at the following resources:
+## 📱 Pages
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Home (`/`)
+- Hero section with animated background
+- Professional summary
+- Key highlights grid
+- Quick stats overview
+- Call-to-action buttons
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### About (`/about`)
+- Professional experience timeline
+- Educational background
+- Technical skills overview
+- Achievement highlights
 
-## Deploy on Vercel
+### Skills (`/skills`)
+- Comprehensive skills categorization
+- Proficiency level indicators
+- Technology stacks breakdown
+- Interactive skill cards
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Contact (`/contact`)
+- Multiple contact methods
+- Interactive contact form
+- Professional networking section
+- Quick response options
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🎨 Design System
+
+- **Color Palette**: Indigo, purple, and pink gradients
+- **Typography**: Geist Sans (body) and Geist Mono (code)
+- **Components**: Reusable glass-morphism cards
+- **Animations**: Smooth hover effects and transitions
+- **Layout**: Consistent spacing and responsive grids
+
+## 🚀 Getting Started
+
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run development server: `npm run dev`
+4. Open [http://localhost:3000](http://localhost:3000)
+
+## 📦 Build & Deploy
+
+- **Build**: `npm run build`
+- **Start**: `npm start`
+- **Lint**: `npm run lint`
+
+## 🔧 Customization
+
+- Update personal information in page components
+- Modify color schemes in `globals.css`
+- Add new sections or pages as needed
+- Customize animations and transitions
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).

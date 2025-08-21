@@ -10,11 +10,45 @@ import {
 } from 'react-icons/md';
 
 const Contact = () => {
+  const contactMethods = [
+    {
+      icon: <MdEmail className="w-8 h-8" />,
+      title: 'Email',
+      value: 'christophertanaka42@gmail.com',
+      action: 'mailto:christophertanaka42@gmail.com',
+      gradient: 'from-blue-500 to-cyan-500',
+      description: 'Perfect for detailed discussions',
+    },
+    {
+      icon: <MdPhone className="w-8 h-8" />,
+      title: 'Phone',
+      value: '425-491-2815',
+      action: 'tel:425-491-2815',
+      gradient: 'from-green-500 to-emerald-500',
+      description: 'Great for quick conversations',
+    },
+    {
+      icon: <MdLocationOn className="w-8 h-8" />,
+      title: 'Location',
+      value: 'Seattle, WA',
+      action: '#',
+      gradient: 'from-purple-500 to-pink-500',
+      description: 'Based in the Pacific Northwest',
+    },
+    {
+      icon: <MdLanguage className="w-8 h-8" />,
+      title: 'Website',
+      value: 'himalayas.app/@christophertanaka',
+      action: 'https://himalayas.app/@christophertanaka',
+      gradient: 'from-orange-500 to-red-500',
+      description: 'More about my work',
+    },
+  ];
+
   return (
     <PageWrapper>
       {/* Hero Section */}
       <section className="relative py-20 text-center">
-        {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-full blur-3xl animate-float"></div>
           <div
@@ -28,12 +62,12 @@ const Contact = () => {
             <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center">
               <MdChat className="w-6 h-6 text-white" />
             </div>
-            <h1 className="text-4xl sm:text-5xl font-bold gradient-text">Let's Connect</h1>
+            <h1 className="text-4xl sm:text-5xl font-bold gradient-text">Let&apos;s Connect</h1>
           </div>
 
           <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
             Ready to start a conversation? Whether you have a project in mind, want to discuss
-            opportunities, or just want to say hello - I'd love to hear from you.
+            opportunities, or just want to say hello - I&apos;d love to hear from you.
           </p>
         </div>
       </section>
@@ -42,40 +76,7 @@ const Contact = () => {
       <section className="relative py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {[
-              {
-                icon: <MdEmail className="w-8 h-8" />,
-                title: 'Email',
-                value: 'christophertanaka42@gmail.com',
-                action: 'mailto:christophertanaka42@gmail.com',
-                gradient: 'from-blue-500 to-cyan-500',
-                description: 'Perfect for detailed discussions',
-              },
-              {
-                icon: <MdPhone className="w-8 h-8" />,
-                title: 'Phone',
-                value: '425-491-2815',
-                action: 'tel:425-491-2815',
-                gradient: 'from-green-500 to-emerald-500',
-                description: 'Great for quick conversations',
-              },
-              {
-                icon: <MdLocationOn className="w-8 h-8" />,
-                title: 'Location',
-                value: 'Seattle, WA',
-                action: '#',
-                gradient: 'from-purple-500 to-pink-500',
-                description: 'Based in the Pacific Northwest',
-              },
-              {
-                icon: <MdLanguage className="w-8 h-8" />,
-                title: 'Website',
-                value: 'himalayas.app/@christophertanaka',
-                action: 'https://himalayas.app/@christophertanaka',
-                gradient: 'from-orange-500 to-red-500',
-                description: 'More about my work',
-              },
-            ].map((method, index) => (
+            {contactMethods.map((method, index) => (
               <div key={index} className="group">
                 <a
                   href={method.action}
@@ -111,7 +112,7 @@ const Contact = () => {
           <div className="glass-card p-8 rounded-3xl border border-white/10 shadow-2xl">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold gradient-text mb-4">Send a Message</h2>
-              <p className="text-gray-300">I'll get back to you within 24 hours</p>
+              <p className="text-gray-300">I&apos;ll get back to you within 24 hours</p>
             </div>
 
             <form className="space-y-6">
@@ -154,7 +155,7 @@ const Contact = () => {
                   id="subject"
                   name="subject"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
-                  placeholder="What's this about?"
+                  placeholder="What&apos;s this about?"
                   required
                 />
               </div>
@@ -196,12 +197,12 @@ const Contact = () => {
             </div>
 
             <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">
-              Let's Grab a Coffee
+              Let&apos;s Grab a Coffee
             </h2>
 
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              I'm always open to meeting new people and discussing exciting opportunities. Whether
-              it's a virtual coffee chat or an in-person meeting in Seattle, I'd love to connect and
+              I&apos;m always open to meeting new people and discussing exciting opportunities. Whether
+              it&apos;s a virtual coffee chat or an in-person meeting in Seattle, I&apos;d love to connect and
               explore how we can work together.
             </p>
 
@@ -213,7 +214,7 @@ const Contact = () => {
                 Schedule a Chat
               </a>
               <a
-                href="/experience"
+                href="/about"
                 className="px-8 py-4 glass-card border border-white/20 rounded-2xl text-white font-semibold text-lg hover:border-white/40 transition-all duration-300 focus-ring"
               >
                 View My Work

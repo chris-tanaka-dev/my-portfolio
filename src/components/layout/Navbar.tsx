@@ -8,9 +8,8 @@ import DarkModeToggle from './DarkModeToggle';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
-  { href: '/experience', label: 'Experience', icon: '💼' },
+  { href: '/about', label: 'About', icon: '💼' },
   { href: '/skills', label: 'Skills', icon: '⚡' },
-  { href: '/education', label: 'Education', icon: '🎓' },
   { href: '/contact', label: 'Contact', icon: '📧' },
 ];
 

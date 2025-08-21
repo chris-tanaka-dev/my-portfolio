@@ -1,6 +1,15 @@
 import PageWrapper from '../../components/common/PageWrapper';
 import SkillList from '../../components/features/Skills/SkillList';
-import { MdFlashOn, MdCode, MdPsychology, MdStorage, MdCloud, MdRocketLaunch, MdPalette, MdSecurity } from 'react-icons/md';
+import { 
+  MdFlashOn, 
+  MdCode, 
+  MdPsychology, 
+  MdStorage, 
+  MdCloud, 
+  MdRocketLaunch, 
+  MdPalette, 
+  MdSecurity 
+} from 'react-icons/md';
 
 const Skills = () => {
   const skillCategories = [
@@ -60,11 +69,17 @@ const Skills = () => {
     }
   ];
 
+  const proficiencyLevels = [
+    { name: "Frontend", level: 95, color: "from-blue-500 to-cyan-500" },
+    { name: "Backend", level: 90, color: "from-purple-500 to-pink-500" },
+    { name: "AI/ML", level: 85, color: "from-green-500 to-emerald-500" },
+    { name: "DevOps", level: 80, color: "from-orange-500 to-red-500" }
+  ];
+
   return (
     <PageWrapper>
       {/* Hero Section */}
       <section className="relative py-20 text-center">
-        {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute top-20 left-1/4 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-purple-600/10 rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-br from-purple-500/10 to-pink-600/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }}></div>
@@ -112,12 +127,7 @@ const Skills = () => {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { name: "Frontend", level: 95, color: "from-blue-500 to-cyan-500" },
-              { name: "Backend", level: 90, color: "from-purple-500 to-pink-500" },
-              { name: "AI/ML", level: 85, color: "from-green-500 to-emerald-500" },
-              { name: "DevOps", level: 80, color: "from-orange-500 to-red-500" }
-            ].map((skill, index) => (
+            {proficiencyLevels.map((skill, index) => (
               <div key={index} className="glass-card p-6 rounded-2xl border border-white/10 text-center group hover:scale-105 transition-all duration-300">
                 <div className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
                   <MdPalette className="w-8 h-8 text-white" />
@@ -147,7 +157,7 @@ const Skills = () => {
               Ready to Build Something Amazing?
             </h2>
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              Let's collaborate on your next project and bring your vision to life with cutting-edge technology.
+              Let&apos;s collaborate on your next project and bring your vision to life with cutting-edge technology.
             </p>
             <a
               href="/contact"
