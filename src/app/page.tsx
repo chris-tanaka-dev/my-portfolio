@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import { MdAutoAwesome, MdKeyboardArrowDown } from 'react-icons/md';
+
+import JsonLd from '@/components/common/JsonLd';
+
 import PageWrapper from '../components/common/PageWrapper';
 import ProfileAvatar from '../components/features/Home/ProfileAvatar';
 import { homeHighlights, homeStats } from '../lib/data/home';
@@ -9,8 +12,10 @@ import type { Metadata } from 'next';
 export const metadata: Metadata = {
   title: 'Home | Christopher Tanaka',
   description:
-    'Senior Software Engineer building low‑latency, AI‑powered products. Explore highlights, experience, and core skills.',
+    'Senior Software Engineer building low-latency, AI-powered products. Explore highlights, experience, and core skills.',
 };
+
+export const dynamic = 'force-dynamic';
 
 const Home = () => {
   const highlights = homeHighlights.map((h) => ({
@@ -18,9 +23,19 @@ const Home = () => {
     icon: renderIcon(h.iconName, 'w-8 h-8 text-white'),
   }));
   const stats = homeStats;
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
 
   return (
     <PageWrapper>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'WebSite',
+          url: baseUrl,
+          name: 'Christopher Tanaka | Senior Software Engineer',
+          inLanguage: 'en-US',
+        }}
+      />
       {/* Hero Section */}
       <section
         className="relative min-h-[88vh] md:min-h-screen flex items-center justify-center overflow-hidden"
@@ -285,7 +300,7 @@ const Home = () => {
             Let’s build something great
           </h2>
           <p className="text-gray-300 mt-2 text-sm md:text-base">
-            Open to Senior/Staff Frontend or Full‑Stack roles focused on real‑time, AI, or complex
+            Open to Senior/Staff Frontend or Full-Stack roles focused on real-time, AI, or complex
             UI.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">

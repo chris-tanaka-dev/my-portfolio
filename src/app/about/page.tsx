@@ -1,8 +1,9 @@
 import { MdCalendarToday, MdLocationOn, MdEmojiEvents, MdRocketLaunch } from 'react-icons/md';
+import JsonLd from '@/components/common/JsonLd';
+
 import PageWrapper from '../../components/common/PageWrapper';
 import { experienceData, educationData, aboutSkillCategories } from '../../lib/data/about';
 import { renderIcon, renderBrandIcon } from '../../lib/icons';
-
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -10,6 +11,8 @@ export const metadata: Metadata = {
   description:
     'Professional experience, education, and technical strengths of Christopher Tanaka, Senior Software Engineer.',
 };
+
+export const dynamic = 'force-dynamic';
 
 const About = () => {
   const exps = experienceData.map((e) => ({
@@ -24,9 +27,30 @@ const About = () => {
     ...c,
     icon: renderIcon(c.iconName, 'w-8 h-8'),
   }));
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
+  const email = 'christophertanaka42@gmail.com';
+  const phone = '425-565-3249';
+  const website = 'https://himalayas.app/@christophertanaka';
 
   return (
     <PageWrapper>
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Christopher Tanaka',
+          jobTitle: 'Senior Software Engineer',
+          url: `${baseUrl}/about`,
+          email: `mailto:${email}`,
+          telephone: phone,
+          sameAs: [website],
+          alumniOf: educationData.map((e) => ({
+            '@type': 'CollegeOrUniversity',
+            name: e.institution,
+          })),
+          worksFor: experienceData.map((e) => ({ '@type': 'Organization', name: e.company })),
+        }}
+      />
       {/* Hero Section */}
       <section className="relative py-20 text-center">
         <div className="absolute inset-0 overflow-hidden">
