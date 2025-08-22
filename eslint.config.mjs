@@ -1,8 +1,8 @@
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
-import prettierPlugin from 'eslint-plugin-prettier';
 import importPlugin from 'eslint-plugin-import';
+import prettierPlugin from 'eslint-plugin-prettier';
 import reactPlugin from 'eslint-plugin-react';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -13,12 +13,31 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+  {
+    ignores: [
+      '**/node_modules/**',
+      '.next/**',
+      'out/**',
+      'dist/**',
+      'build/**',
+      'coverage/**',
+      '.vercel/**',
+    ],
+  },
   ...compat.extends('next/core-web-vitals', 'next/typescript'),
   {
     plugins: {
       prettier: prettierPlugin,
       import: importPlugin,
       react: reactPlugin,
+    },
+    settings: {
+      'import/resolver': {
+        typescript: {
+          // Use the project's tsconfig for path alias resolution
+          project: './tsconfig.json',
+        },
+      },
     },
     rules: {
       'prettier/prettier': 'error',

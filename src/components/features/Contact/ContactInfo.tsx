@@ -1,5 +1,3 @@
-import React from 'react';
-
 const CONTACT = {
   location: '4101 SW Orchard Street, Seattle, WA 98136',
   email: 'christophertanaka42@gmail.com',

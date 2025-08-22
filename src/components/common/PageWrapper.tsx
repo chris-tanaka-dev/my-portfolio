@@ -1,13 +1,13 @@
 'use client';
 
-import React from 'react';
+import type { ReactNode } from 'react';
 
 interface PageWrapperProps {
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }
 
-const PageWrapper: React.FC<PageWrapperProps> = ({ children, className = '' }) => {
+const PageWrapper = ({ children, className = '' }: PageWrapperProps) => {
   return <div className={`min-h-screen ${className}`}>{children}</div>;
 };
 

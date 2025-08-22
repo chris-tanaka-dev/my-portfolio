@@ -34,6 +34,7 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Ta
 ## 📱 Pages
 
 ### Home (`/`)
+
 - Hero section with animated background
 - Professional summary
 - Key highlights grid
@@ -41,18 +42,21 @@ A modern, responsive portfolio website built with Next.js 15, TypeScript, and Ta
 - Call-to-action buttons
 
 ### About (`/about`)
+
 - Professional experience timeline
 - Educational background
 - Technical skills overview
 - Achievement highlights
 
 ### Skills (`/skills`)
+
 - Comprehensive skills categorization
 - Proficiency level indicators
 - Technology stacks breakdown
 - Interactive skill cards
 
 ### Contact (`/contact`)
+
 - Multiple contact methods
 - Interactive contact form
 - Professional networking section
