@@ -1,6 +1,6 @@
 # Christopher Tanaka - Portfolio Website
 
-A modern, responsive portfolio website built with Next.js 14, TypeScript, and Tailwind CSS.
+A modern, responsive portfolio website built with Next.js 15, TypeScript, and Tailwind CSS.
 
 ## 🏗️ Project Structure
 
@@ -25,7 +25,7 @@ A modern, responsive portfolio website built with Next.js 14, TypeScript, and Ta
 
 ## 🛠️ Tech Stack
 
-- **Framework**: Next.js 14 (App Router)
+- **Framework**: Next.js 15 (App Router)
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
 - **Icons**: React Icons (Material Design)

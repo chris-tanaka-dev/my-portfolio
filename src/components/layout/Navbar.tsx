@@ -29,22 +29,6 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Background particles */}
-      <div className="particles fixed top-0 left-0 w-full h-full pointer-events-none z-0">
-        {[...Array(20)].map((_, i) => (
-          <div
-            key={i}
-            className="particle animate-float"
-            style={{
-              left: `${Math.random() * 100}%`,
-              top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${3 + Math.random() * 3}s`,
-            }}
-          />
-        ))}
-      </div>
-
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
           isScrolled ? 'py-2' : 'py-4'
@@ -97,7 +81,7 @@ const Navbar = () => {
               {/* Right side */}
               <div className="flex items-center space-x-3">
                 <DarkModeToggle />
-                
+
                 {/* Mobile menu button */}
                 <button
                   onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
