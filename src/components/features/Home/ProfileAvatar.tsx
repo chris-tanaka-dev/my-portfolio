@@ -39,12 +39,6 @@ const ProfileAvatar = () => {
           {/* Animated underline */}
           <div className="w-32 h-1 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-full mx-auto animate-pulse-glow"></div>
         </div>
-
-        {/* Location badge */}
-        <div className="inline-flex items-center space-x-2 px-4 py-2 glass rounded-full border border-white/10">
-          <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-          <span className="text-sm text-gray-300 font-medium">Seattle, WA</span>
-        </div>
       </div>
 
       {/* Spacer below hero */}
