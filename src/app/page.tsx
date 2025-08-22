@@ -7,6 +7,7 @@ import {
   MdFlashOn,
   MdRocketLaunch,
 } from 'react-icons/md';
+import Link from 'next/link';
 
 const Home = () => {
   const highlights = [
@@ -104,7 +105,7 @@ const Home = () => {
           {/* Call to Action */}
           <div className="mt-16 animate-fade-in-scale" style={{ animationDelay: '0.8s' }}>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <a
+              <Link
                 href="/about"
                 className="group px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring"
               >
@@ -112,9 +113,9 @@ const Home = () => {
                   <span>View Experience</span>
                   <MdKeyboardArrowDown className="w-5 h-5 group-hover:translate-y-1 transition-transform duration-300" />
                 </span>
-              </a>
+              </Link>
 
-              <a
+              <Link
                 href="/contact"
                 className="group px-8 py-4 glass-card border border-white/20 rounded-2xl text-white font-semibold text-lg hover:border-white/40 transition-all duration-300 focus-ring"
               >
@@ -122,7 +123,7 @@ const Home = () => {
                   <span>Get In Touch</span>
                   <MdAutoAwesome className="w-5 h-5 group-hover:rotate-12 transition-transform duration-300" />
                 </span>
-              </a>
+              </Link>
             </div>
           </div>
         </div>

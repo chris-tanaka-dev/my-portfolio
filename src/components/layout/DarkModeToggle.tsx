@@ -9,7 +9,7 @@ const DarkModeToggle = () => {
 
   useEffect(() => {
     setMounted(true);
-    
+
     // Check localStorage first, then system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
@@ -58,28 +58,28 @@ const DarkModeToggle = () => {
       className="relative w-12 h-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 p-1 transition-all duration-500 focus-ring group hover:shadow-lg hover:shadow-indigo-500/25"
     >
       {/* Toggle handle */}
-      <div 
+      <div
         className={`w-4 h-4 bg-white rounded-full shadow-lg transform transition-transform duration-500 ease-out ${
           isLight ? 'translate-x-6' : 'translate-x-0'
         }`}
       />
-      
+
       {/* Icons */}
       <div className="absolute inset-0 flex items-center justify-between px-1 pointer-events-none">
-        <MdLightMode 
-          size={12} 
+        <MdLightMode
+          size={12}
           className={`text-yellow-400 transition-all duration-300 ${
             isLight ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
           }`}
         />
-        <MdDarkMode 
-          size={12} 
+        <MdDarkMode
+          size={12}
           className={`text-blue-400 transition-all duration-300 ${
             !isLight ? 'opacity-100 scale-100' : 'opacity-0 scale-75'
           }`}
         />
       </div>
-      
+
       {/* Glow effect */}
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
     </button>
