@@ -181,6 +181,14 @@ const About = () => {
             A seasoned software engineer with 12+ years of experience building innovative solutions
             at the intersection of AI, real-time systems, and collaborative tools.
           </p>
+          <div className="mt-4 flex justify-center">
+            <span
+              aria-label="Open to remote work"
+              className="text-xs md:text-sm text-gray-200 bg-white/5 px-3 py-1 rounded-full border border-white/10"
+            >
+              Open to remote work
+            </span>
+          </div>
         </div>
       </section>
 

@@ -100,6 +100,14 @@ const Skills = () => {
             A comprehensive toolkit of modern technologies, frameworks, and methodologies that power
             innovative solutions and drive exceptional user experiences.
           </p>
+          <div className="mt-4 flex justify-center">
+            <span
+              aria-label="Open to remote work"
+              className="text-xs md:text-sm text-gray-200 bg-white/5 px-3 py-1 rounded-full border border-white/10"
+            >
+              Open to remote work
+            </span>
+          </div>
         </div>
       </section>
 

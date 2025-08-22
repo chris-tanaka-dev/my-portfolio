@@ -29,11 +29,11 @@ const Contact = () => {
     },
     {
       icon: <MdLocationOn className="w-8 h-8" />,
-      title: 'Location',
-      value: 'Seattle, WA',
+      title: 'Remote',
+      value: 'Open to remote work',
       action: '#',
       gradient: 'from-purple-500 to-pink-500',
-      description: 'Based in the Pacific Northwest',
+      description: 'Available across US-friendly time zones',
     },
     {
       icon: <MdLanguage className="w-8 h-8" />,
@@ -69,6 +69,14 @@ const Contact = () => {
             Ready to start a conversation? Whether you have a project in mind, want to discuss
             opportunities, or just want to say hello - I&apos;d love to hear from you.
           </p>
+          <div className="mt-4 flex justify-center">
+            <span
+              aria-label="Open to remote work"
+              className="text-xs md:text-sm text-gray-200 bg-white/5 px-3 py-1 rounded-full border border-white/10"
+            >
+              Open to remote work
+            </span>
+          </div>
         </div>
       </section>
 
@@ -202,8 +210,8 @@ const Contact = () => {
 
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
               I&apos;m always open to meeting new people and discussing exciting opportunities.
-              Whether it&apos;s a virtual coffee chat or an in-person meeting in Seattle, I&apos;d
-              love to connect and explore how we can work together.
+              Whether it&apos;s a virtual coffee chat or a quick call, I&apos;d love to connect and
+              explore how we can work together.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
