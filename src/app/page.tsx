@@ -1,42 +1,23 @@
 import Link from 'next/link';
-import {
-  MdKeyboardArrowDown,
-  MdAutoAwesome,
-  MdCode,
-  MdFlashOn,
-  MdRocketLaunch,
-} from 'react-icons/md';
+import { MdKeyboardArrowDown, MdAutoAwesome } from 'react-icons/md';
 import PageWrapper from '../components/common/PageWrapper';
 import ProfileAvatar from '../components/features/Home/ProfileAvatar';
+import { homeHighlights, homeStats } from '../lib/data/home';
+import { renderIcon } from '../lib/icons';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Home | Christopher Tanaka',
+  description:
+    'Senior Software Engineer building low‑latency, AI‑powered products. Explore highlights, experience, and core skills.',
+};
 
 const Home = () => {
-  const highlights = [
-    {
-      icon: <MdCode className="w-8 h-8 text-white" />,
-      title: 'Full-Stack Expertise',
-      description: 'React, TypeScript, Node.js, Python. From UX to scalable backends.',
-      gradient: 'from-indigo-500 to-purple-600',
-    },
-    {
-      icon: <MdFlashOn className="w-8 h-8 text-white" />,
-      title: 'Performance Focus',
-      description: 'Real-time systems, WebGL, and low-latency architectures that scale.',
-      gradient: 'from-purple-500 to-pink-600',
-    },
-    {
-      icon: <MdRocketLaunch className="w-8 h-8 text-white" />,
-      title: 'AI Integration',
-      description: 'GPT UX, CV, and ML pipelines—from prototyping to production.',
-      gradient: 'from-blue-500 to-cyan-600',
-    },
-  ];
-
-  const stats = [
-    { value: '12+', label: 'Years Experience' },
-    { value: '50+', label: 'Projects Delivered' },
-    { value: '4', label: 'Major Companies' },
-    { value: '100%', label: 'Client Satisfaction' },
-  ];
+  const highlights = homeHighlights.map((h) => ({
+    ...h,
+    icon: renderIcon(h.iconName, 'w-8 h-8 text-white'),
+  }));
+  const stats = homeStats;
 
   return (
     <PageWrapper>

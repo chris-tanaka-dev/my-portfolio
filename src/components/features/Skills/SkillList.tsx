@@ -4,7 +4,7 @@ interface SkillListProps {
   icon: ReactNode;
   title: string;
   gradient: string;
-  skills: string[];
+  skills: readonly string[];
 }
 
 const SkillList: React.FC<SkillListProps> = ({ icon, title, gradient, skills }) => (

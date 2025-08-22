@@ -1,80 +1,22 @@
-import {
-  MdFlashOn,
-  MdCode,
-  MdPsychology,
-  MdStorage,
-  MdCloud,
-  MdRocketLaunch,
-  MdPalette,
-  MdSecurity,
-} from 'react-icons/md';
+import { MdFlashOn, MdRocketLaunch, MdPalette } from 'react-icons/md';
 import PageWrapper from '../../components/common/PageWrapper';
 import SkillList from '../../components/features/Skills/SkillList';
+import { skillCategories as skillCategoriesData, proficiencyLevels } from '../../lib/data/skills';
+import { renderIcon } from '../../lib/icons';
+
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Skills | Christopher Tanaka',
+  description:
+    'Technical arsenal across frontend, backend, AI/ML, and DevOps. Explore categorized skills and proficiency levels.',
+};
 
 const Skills = () => {
-  const skillCategories = [
-    {
-      icon: <MdCode className="w-8 h-8" />,
-      title: 'Frontend & UI Development',
-      gradient: 'from-blue-500 to-cyan-500',
-      skills: [
-        'JavaScript (ES6+), TypeScript, HTML5, CSS3, SCSS',
-        'React, Next.js, Redux, Context API, Zustand, Storybook, Material UI, TailwindCSS',
-        'Canvas API, WebGL, SVG, WebAssembly, WebSockets, WebRTC',
-      ],
-    },
-    {
-      icon: <MdStorage className="w-8 h-8" />,
-      title: 'Backend & APIs',
-      gradient: 'from-purple-500 to-pink-500',
-      skills: [
-        'Node.js, Express.js, Python, C#, Ruby on Rails',
-        'REST, GraphQL, AI/ML/CV model endpoints, real-time services (WebSockets)',
-      ],
-    },
-    {
-      icon: <MdPsychology className="w-8 h-8" />,
-      title: 'AI/ML & Data Visualization',
-      gradient: 'from-green-500 to-emerald-500',
-      skills: [
-        'TensorFlow integration, NLP/CV model pipelines',
-        'D3.js, financial time-series analysis, interactive dashboards',
-        'GPT-powered multimodal search, Visual Property Intelligence UIs',
-      ],
-    },
-    {
-      icon: <MdCloud className="w-8 h-8" />,
-      title: 'DevOps & Infrastructure',
-      gradient: 'from-orange-500 to-red-500',
-      skills: [
-        'Docker, Kubernetes, AWS (EC2, ELB, Redis), serverless',
-        'CI/CD pipelines (Jenkins, GitHub Actions), Storybook snapshot testing',
-        'Build tools: Webpack, Babel, npm/Yarn, Vite',
-      ],
-    },
-    {
-      icon: <MdSecurity className="w-8 h-8" />,
-      title: 'Databases & Persistence',
-      gradient: 'from-indigo-500 to-purple-500',
-      skills: ['PostgreSQL, MongoDB, Redis'],
-    },
-    {
-      icon: <MdRocketLaunch className="w-8 h-8" />,
-      title: 'Performance & Tooling',
-      gradient: 'from-pink-500 to-rose-500',
-      skills: [
-        'Profiling & optimization: Lighthouse, Chrome tracing, virtualized lists',
-        'Skillful in Git workflows, cross-browser debugging, responsive design',
-      ],
-    },
-  ];
-
-  const proficiencyLevels = [
-    { name: 'Frontend', level: 95, color: 'from-blue-500 to-cyan-500' },
-    { name: 'Backend', level: 90, color: 'from-purple-500 to-pink-500' },
-    { name: 'AI/ML', level: 85, color: 'from-green-500 to-emerald-500' },
-    { name: 'DevOps', level: 80, color: 'from-orange-500 to-red-500' },
-  ];
+  const skillCategories = skillCategoriesData.map((c) => ({
+    ...c,
+    icon: renderIcon(c.iconName, 'w-8 h-8'),
+  }));
 
   return (
     <PageWrapper>

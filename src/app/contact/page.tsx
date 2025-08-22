@@ -1,49 +1,20 @@
-import {
-  MdEmail,
-  MdPhone,
-  MdLocationOn,
-  MdLanguage,
-  MdSend,
-  MdChat,
-  MdCoffee,
-} from 'react-icons/md';
+import { MdSend, MdChat, MdCoffee } from 'react-icons/md';
 import PageWrapper from '../../components/common/PageWrapper';
+import { contactMethods as contactMethodsData } from '../../lib/data/contact';
+import { renderIcon } from '../../lib/icons';
+import type { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Contact | Christopher Tanaka',
+  description:
+    'Get in touch with Christopher Tanaka for projects, opportunities, or a quick coffee chat. Email, phone, and more.',
+};
 
 const Contact = () => {
-  const contactMethods = [
-    {
-      icon: <MdEmail className="w-8 h-8" />,
-      title: 'Email',
-      value: 'christophertanaka42@gmail.com',
-      action: 'mailto:christophertanaka42@gmail.com',
-      gradient: 'from-blue-500 to-cyan-500',
-      description: 'Perfect for detailed discussions',
-    },
-    {
-      icon: <MdPhone className="w-8 h-8" />,
-      title: 'Phone',
-      value: '425-491-2815',
-      action: 'tel:425-491-2815',
-      gradient: 'from-green-500 to-emerald-500',
-      description: 'Great for quick conversations',
-    },
-    {
-      icon: <MdLocationOn className="w-8 h-8" />,
-      title: 'Remote',
-      value: 'Open to remote work',
-      action: '#',
-      gradient: 'from-purple-500 to-pink-500',
-      description: 'Available across US-friendly time zones',
-    },
-    {
-      icon: <MdLanguage className="w-8 h-8" />,
-      title: 'Website',
-      value: 'himalayas.app/@christophertanaka',
-      action: 'https://himalayas.app/@christophertanaka',
-      gradient: 'from-orange-500 to-red-500',
-      description: 'More about my work',
-    },
-  ];
+  const contactMethods = contactMethodsData.map((m) => ({
+    ...m,
+    icon: renderIcon(m.iconName, 'w-8 h-8'),
+  }));
 
   return (
     <PageWrapper>
