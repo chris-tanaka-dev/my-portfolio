@@ -3,7 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google';
 import BackgroundSkillField from '../components/common/BackgroundSkillField';
 import Navbar from '../components/layout/Navbar';
 import './globals.css';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 
 const geistSans = Geist({
@@ -33,28 +33,30 @@ export const metadata: Metadata = {
     description:
       'Senior Software Engineer building low-latency, AI-powered products and real-time collaboration tools.',
     siteName: 'Christopher Tanaka Portfolio',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Christopher Tanaka | Senior Software Engineer',
     description:
       'Senior Software Engineer building low-latency, AI-powered products and real-time collaboration tools.',
+    images: ['/twitter-image'],
   },
   icons: {
-    icon: [
-      { url: '/favicon.ico', type: 'image/x-icon' },
-      { url: '/icon.svg', type: 'image/svg+xml' },
-    ],
+    icon: [{ url: '/icon.svg', type: 'image/svg+xml' }],
+    apple: [{ url: '/icon.svg' }],
+    shortcut: ['/icon.svg'],
   },
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
-  themeColor: '#0b0b12',
   robots: {
     index: true,
     follow: true,
   },
+};
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#0b0b12',
 };
 
 const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {

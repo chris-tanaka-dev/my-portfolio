@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   title: 'About | Christopher Tanaka',
   description:
     'Professional experience, education, and technical strengths of Christopher Tanaka, Senior Software Engineer.',
+  alternates: {
+    canonical: '/about',
+  },
+  openGraph: {
+    url: '/about',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    images: ['/twitter-image'],
+  },
 };
 
 export const dynamic = 'force-dynamic';

@@ -10,6 +10,16 @@ export const metadata: Metadata = {
   title: 'Contact | Christopher Tanaka',
   description:
     'Get in touch with Christopher Tanaka for projects, opportunities, or a quick coffee chat. Email, phone, and more.',
+  alternates: {
+    canonical: '/contact',
+  },
+  openGraph: {
+    url: '/contact',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    images: ['/twitter-image'],
+  },
 };
 
 export const dynamic = 'force-dynamic';

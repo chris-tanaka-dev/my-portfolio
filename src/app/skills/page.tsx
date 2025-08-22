@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: 'Skills | Christopher Tanaka',
   description:
     'Technical arsenal across frontend, backend, AI/ML, and DevOps. Explore categorized skills and proficiency levels.',
+  alternates: {
+    canonical: '/skills',
+  },
+  openGraph: {
+    url: '/skills',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    images: ['/twitter-image'],
+  },
 };
 
 export const dynamic = 'force-dynamic';

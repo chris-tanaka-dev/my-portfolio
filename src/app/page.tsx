@@ -13,6 +13,16 @@ export const metadata: Metadata = {
   title: 'Home | Christopher Tanaka',
   description:
     'Senior Software Engineer building low-latency, AI-powered products. Explore highlights, experience, and core skills.',
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    url: '/',
+    images: [{ url: '/opengraph-image', width: 1200, height: 630 }],
+  },
+  twitter: {
+    images: ['/twitter-image'],
+  },
 };
 
 export const dynamic = 'force-dynamic';
@@ -34,6 +44,20 @@ const Home = () => {
           url: baseUrl,
           name: 'Christopher Tanaka | Senior Software Engineer',
           inLanguage: 'en-US',
+        }}
+      />
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': 'Person',
+          name: 'Christopher Tanaka',
+          url: baseUrl,
+          jobTitle: 'Senior Software Engineer',
+          sameAs: [
+            // Add your profiles if available
+            // 'https://www.linkedin.com/in/USERNAME',
+            // 'https://github.com/USERNAME',
+          ],
         }}
       />
       {/* Hero Section */}
