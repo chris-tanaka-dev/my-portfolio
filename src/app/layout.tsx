@@ -3,6 +3,7 @@ import BackgroundSkillField from '../components/common/BackgroundSkillField';
 import Navbar from '../components/layout/Navbar';
 import './globals.css';
 import type { Metadata } from 'next';
+import type { ReactNode } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     'Senior Software Engineer with 12 years of experience building low-latency, AI-powered systems and collaborative tools. Proven impact at Figma, FoxyAI, and more.',
 };
 
-const RootLayout = ({ children }: Readonly<{ children: React.ReactNode }>) => {
+const RootLayout = ({ children }: Readonly<{ children: ReactNode }>) => {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
       <body

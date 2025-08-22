@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { MdKeyboardArrowDown, MdAutoAwesome } from 'react-icons/md';
+import { MdAutoAwesome, MdKeyboardArrowDown } from 'react-icons/md';
 import PageWrapper from '../components/common/PageWrapper';
 import ProfileAvatar from '../components/features/Home/ProfileAvatar';
 import { homeHighlights, homeStats } from '../lib/data/home';
