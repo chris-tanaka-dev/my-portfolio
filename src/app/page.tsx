@@ -1,5 +1,4 @@
-import PageWrapper from '../components/common/PageWrapper';
-import ProfileAvatar from '../components/features/Home/ProfileAvatar';
+import Link from 'next/link';
 import {
   MdKeyboardArrowDown,
   MdAutoAwesome,
@@ -7,7 +6,8 @@ import {
   MdFlashOn,
   MdRocketLaunch,
 } from 'react-icons/md';
-import Link from 'next/link';
+import PageWrapper from '../components/common/PageWrapper';
+import ProfileAvatar from '../components/features/Home/ProfileAvatar';
 
 const Home = () => {
   const highlights = [
@@ -44,17 +44,28 @@ const Home = () => {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Background Elements */}
         <div className="absolute inset-0 overflow-hidden">
-          {[0, 2, 4].map((delay, index) => (
+          {[
+            {
+              key: 'top-left',
+              delay: 0,
+              className: 'top-20 left-20 w-72 h-72 from-indigo-500/20 to-purple-600/20',
+            },
+            {
+              key: 'bottom-right',
+              delay: 2,
+              className: 'bottom-20 right-20 w-96 h-96 from-purple-500/20 to-pink-600/20',
+            },
+            {
+              key: 'center',
+              delay: 4,
+              className:
+                'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 from-blue-500/10 to-cyan-500/10',
+            },
+          ].map((b) => (
             <div
-              key={index}
-              className={`absolute w-72 h-72 bg-gradient-to-br ${
-                index === 0
-                  ? 'top-20 left-20 from-indigo-500/20 to-purple-600/20'
-                  : index === 1
-                    ? 'bottom-20 right-20 w-96 h-96 from-purple-500/20 to-pink-600/20'
-                    : 'top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 from-blue-500/10 to-cyan-500/10'
-              } rounded-full blur-3xl animate-float`}
-              style={{ animationDelay: `${delay}s` }}
+              key={b.key}
+              className={`absolute bg-gradient-to-br ${b.className} rounded-full blur-3xl animate-float`}
+              style={{ animationDelay: `${b.delay}s` }}
             />
           ))}
         </div>
@@ -86,9 +97,9 @@ const Home = () => {
 
           {/* Key Highlights */}
           <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
-            {highlights.map((highlight, index) => (
+            {highlights.map((highlight) => (
               <div
-                key={index}
+                key={highlight.title}
                 className="glass-card p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group hover:scale-105"
               >
                 <div
@@ -140,8 +151,8 @@ const Home = () => {
       <section className="py-20 relative">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.value}
                 </div>

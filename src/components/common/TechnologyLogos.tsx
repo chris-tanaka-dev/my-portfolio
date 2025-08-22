@@ -1,5 +1,3 @@
-import React from 'react';
-import type { IconType } from 'react-icons';
 import {
   SiReact,
   SiTypescript,
@@ -49,6 +47,7 @@ import {
   SiCypress,
   SiLighthouse,
 } from 'react-icons/si';
+import type { IconType } from 'react-icons';
 
 export type SkillKey =
   | 'react'

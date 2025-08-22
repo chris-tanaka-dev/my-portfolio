@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useLayoutEffect, useMemo, useRef } from 'react';
-import { SkillIcon, type SkillKey } from './TechnologyLogos';
+import { useLayoutEffect, useMemo, useRef } from 'react';
+import { SkillIcon } from './TechnologyLogos';
+import type { SkillKey } from './TechnologyLogos';
 
 interface SkillSwarmProps {
   skills: SkillKey[];

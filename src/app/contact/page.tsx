@@ -1,4 +1,3 @@
-import PageWrapper from '../../components/common/PageWrapper';
 import {
   MdEmail,
   MdPhone,
@@ -8,6 +7,7 @@ import {
   MdChat,
   MdCoffee,
 } from 'react-icons/md';
+import PageWrapper from '../../components/common/PageWrapper';
 
 const Contact = () => {
   const contactMethods = [
@@ -76,8 +76,8 @@ const Contact = () => {
       <section className="relative py-20">
         <div className="max-w-6xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-            {contactMethods.map((method, index) => (
-              <div key={index} className="group">
+            {contactMethods.map((method) => (
+              <div key={method.title} className="group">
                 <a
                   href={method.action}
                   target={method.action.startsWith('http') ? '_blank' : undefined}
@@ -155,7 +155,7 @@ const Contact = () => {
                   id="subject"
                   name="subject"
                   className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all duration-300"
-                  placeholder="What&apos;s this about?"
+                  placeholder="What's this about?"
                   required
                 />
               </div>
@@ -201,9 +201,9 @@ const Contact = () => {
             </h2>
 
             <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-              I&apos;m always open to meeting new people and discussing exciting opportunities. Whether
-              it&apos;s a virtual coffee chat or an in-person meeting in Seattle, I&apos;d love to connect and
-              explore how we can work together.
+              I&apos;m always open to meeting new people and discussing exciting opportunities.
+              Whether it&apos;s a virtual coffee chat or an in-person meeting in Seattle, I&apos;d
+              love to connect and explore how we can work together.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

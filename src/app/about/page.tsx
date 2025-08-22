@@ -1,4 +1,3 @@
-import PageWrapper from '../../components/common/PageWrapper';
 import {
   MdWork,
   MdCalendarToday,
@@ -13,6 +12,7 @@ import {
   MdStorage,
   MdCloud,
 } from 'react-icons/md';
+import PageWrapper from '../../components/common/PageWrapper';
 
 const About = () => {
   const experienceData = [
@@ -195,8 +195,8 @@ const About = () => {
           </div>
 
           <div className="space-y-12">
-            {experienceData.map((exp, index) => (
-              <div key={index} className="group">
+            {experienceData.map((exp) => (
+              <div key={`${exp.company}-${exp.title}`} className="group">
                 <div className="glass-card p-8 rounded-3xl border border-white/10 shadow-2xl hover:border-white/20 transition-all duration-500 hover:scale-[1.02]">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
                     {/* Company Info */}
@@ -257,8 +257,8 @@ const About = () => {
           </div>
 
           <div className="space-y-12">
-            {educationData.map((edu, index) => (
-              <div key={index} className="group">
+            {educationData.map((edu) => (
+              <div key={`${edu.degree}-${edu.institution}`} className="group">
                 <div className="glass-card p-8 rounded-3xl border border-white/10 shadow-2xl hover:border-white/20 transition-all duration-500 hover:scale-[1.02]">
                   <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-center">
                     {/* Education Info */}
@@ -330,8 +330,8 @@ const About = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {skillCategories.map((category, index) => (
-              <div key={index} className="group">
+            {skillCategories.map((category) => (
+              <div key={category.title} className="group">
                 <div className="glass-card p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group hover:scale-105">
                   <div
                     className={`w-16 h-16 bg-gradient-to-br ${category.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
