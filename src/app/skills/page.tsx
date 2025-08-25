@@ -64,19 +64,19 @@ const Skills = () => {
         <div className="relative z-10 max-w-4xl mx-auto px-4">
           <div className="flex items-center justify-center space-x-3 mb-6">
             <div className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-2xl flex items-center justify-center">
-              <MdFlashOn className="w-6 h-6 text-white" />
+              <MdFlashOn className="w-6 h-6 on-gradient" />
             </div>
             <h1 className="text-4xl sm:text-5xl font-bold gradient-text">Technical Arsenal</h1>
           </div>
 
-          <p className="text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto">
+          <p className="text-xl text-[var(--muted)] leading-relaxed max-w-2xl mx-auto">
             A comprehensive toolkit of modern technologies, frameworks, and methodologies that power
             innovative solutions and drive exceptional user experiences.
           </p>
           <div className="mt-4 flex justify-center">
             <span
               aria-label="Open to remote work"
-              className="text-xs md:text-sm text-gray-200 bg-white/5 px-3 py-1 rounded-full border border-white/10"
+              className="text-xs md:text-sm text-[var(--muted)] bg-[var(--glass-bg)] px-3 py-1 rounded-full border border-[var(--glass-border)]"
             >
               Open to remote work
             </span>
@@ -109,24 +109,28 @@ const Skills = () => {
             <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">
               Proficiency Levels
             </h2>
-            <p className="text-gray-300 text-lg">Expertise across different technology domains</p>
+            <p className="text-[var(--muted)] text-lg">
+              Expertise across different technology domains
+            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {proficiencyLevels.map((skill) => (
               <div
                 key={skill.name}
-                className="glass-card p-6 rounded-2xl border border-white/10 text-center group hover:scale-105 transition-all duration-300"
+                className="glass-card p-6 rounded-2xl border border-[var(--border)] text-center group hover:scale-105 transition-all duration-300"
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${skill.color} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
                 >
-                  <MdPalette className="w-8 h-8 text-white" />
+                  <MdPalette className="w-8 h-8 on-gradient" />
                 </div>
-                <h3 className="text-lg font-semibold text-white mb-3">{skill.name}</h3>
+                <h3 className="text-lg font-semibold text-[var(--foreground)] mb-3">
+                  {skill.name}
+                </h3>
 
                 {/* Progress Bar */}
-                <div className="w-full bg-white/10 rounded-full h-2 mb-2">
+                <div className="w-full bg-[var(--glass-bg)] rounded-full h-2 mb-2">
                   <div
                     className={`h-2 bg-gradient-to-r ${skill.color} rounded-full transition-all duration-1000 ease-out`}
                     style={{ width: `${skill.level}%` }}
@@ -143,17 +147,17 @@ const Skills = () => {
       {/* Call to Action */}
       <section className="relative py-20 text-center">
         <div className="max-w-4xl mx-auto px-4">
-          <div className="glass-card p-12 rounded-3xl border border-white/10">
+          <div className="glass-card p-12 rounded-3xl border border-[var(--border)]">
             <h2 className="text-3xl sm:text-4xl font-bold gradient-text mb-6">
               Ready to Build Something Amazing?
             </h2>
-            <p className="text-xl text-gray-300 mb-8 leading-relaxed">
+            <p className="text-xl text-[var(--muted)] mb-8 leading-relaxed">
               Let&apos;s collaborate on your next project and bring your vision to life with
               cutting-edge technology.
             </p>
             <a
               href="/contact"
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring"
+              className="group inline-flex items-center space-x-2 px-8 py-4 rounded-2xl on-gradient font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring gradient-bg"
             >
               <span>Start a Project</span>
               <MdRocketLaunch className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />

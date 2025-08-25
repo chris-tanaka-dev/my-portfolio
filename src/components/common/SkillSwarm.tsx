@@ -266,8 +266,8 @@ const SkillSwarm: React.FC<SkillSwarmProps> = ({
           style={{ width: iconSize + 12, height: iconSize + 12 }}
           title={`${titlePrefix}: ${name}`}
         >
-          <div className="w-full h-full glass-card rounded-xl border border-white/10 flex items-center justify-center">
-            <SkillIcon name={name} className="text-white" />
+          <div className="w-full h-full glass-card rounded-xl border border-[var(--border)] flex items-center justify-center">
+            <SkillIcon name={name} className="text-[var(--foreground)]" />
           </div>
         </div>
       ))}

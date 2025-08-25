@@ -43,10 +43,10 @@ const DarkModeToggle = () => {
     return (
       <button
         aria-label="Toggle theme"
-        className="relative w-12 h-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 p-1 transition-all duration-300 focus-ring"
+        className="relative w-12 h-6 rounded-full p-1 transition-all duration-300 focus-ring gradient-bg"
         disabled
       >
-        <div className="w-4 h-4 bg-white rounded-full shadow-lg transform translate-x-0"></div>
+        <div className="w-4 h-4 bg-[var(--foreground)] rounded-full shadow-lg transform translate-x-0"></div>
       </button>
     );
   }
@@ -55,11 +55,11 @@ const DarkModeToggle = () => {
     <button
       aria-label="Toggle theme"
       onClick={toggleTheme}
-      className="relative w-12 h-6 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 p-1 transition-all duration-500 focus-ring group hover:shadow-lg hover:shadow-indigo-500/25"
+      className="relative w-12 h-6 rounded-full p-1 transition-all duration-500 focus-ring group hover:shadow-lg hover:shadow-[var(--accent)]/25 gradient-bg"
     >
       {/* Toggle handle */}
       <div
-        className={`w-4 h-4 bg-white rounded-full shadow-lg transform transition-transform duration-500 ease-out ${
+        className={`w-4 h-4 bg-[var(--foreground)] rounded-full shadow-lg transform transition-transform duration-500 ease-out ${
           isLight ? 'translate-x-6' : 'translate-x-0'
         }`}
       />
@@ -81,7 +81,7 @@ const DarkModeToggle = () => {
       </div>
 
       {/* Glow effect */}
-      <div className="absolute inset-0 rounded-full bg-gradient-to-r from-indigo-500 to-purple-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm"></div>
+      <div className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm gradient-bg"></div>
     </button>
   );
 };

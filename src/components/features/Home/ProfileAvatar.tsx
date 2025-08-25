@@ -19,7 +19,7 @@ const ProfileAvatar = () => {
             />
           </div>
         </div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-2 border-dashed border-white/20 rounded-full animate-rotate-slow"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-48 h-48 border-2 border-dashed border-[var(--glass-border)] rounded-full animate-rotate-slow"></div>
       </div>
       <div
         className="mt-8 text-center space-y-4 animate-fade-in-scale w-full"
@@ -28,11 +28,11 @@ const ProfileAvatar = () => {
         <h1 className="text-5xl sm:text-6xl font-bold">
           <span className="gradient-text">Christopher</span>
           <br />
-          <span className="text-white">Tanaka</span>
+          <span className="text-[var(--foreground)]">Tanaka</span>
         </h1>
 
         <div className="relative">
-          <h2 className="text-2xl sm:text-3xl font-medium text-gray-300 mb-2">
+          <h2 className="text-2xl sm:text-3xl font-medium text-[var(--muted)] mb-2">
             Senior Software Engineer
           </h2>
 

@@ -8,16 +8,16 @@ interface SkillListProps {
 }
 
 const SkillList: React.FC<SkillListProps> = ({ icon, title, gradient, skills }) => (
-  <div className="glass-card p-8 rounded-3xl border border-white/10 shadow-2xl hover:border-white/20 transition-all duration-500 group hover:scale-[1.02] interactive-card h-full">
+  <div className="glass-card p-8 rounded-3xl border border-[var(--border)] shadow-2xl hover:border-[var(--border-strong)] transition-all duration-500 group hover:scale-[1.02] interactive-card h-full">
     {/* Header with Icon */}
     <div className="text-center mb-8">
       <div
         className={`w-20 h-20 bg-gradient-to-br ${gradient} rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
       >
-        <div className="text-white">{icon}</div>
+        <div className="on-gradient">{icon}</div>
       </div>
 
-      <h3 className="text-2xl font-bold text-white mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
+      <h3 className="text-2xl font-bold text-[var(--foreground)] mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-indigo-400 group-hover:to-purple-400 transition-all duration-300">
         {title}
       </h3>
 
@@ -35,7 +35,7 @@ const SkillList: React.FC<SkillListProps> = ({ icon, title, gradient, skills }) 
           className="group/skill animate-slide-up"
           style={{ animationDelay: `${index * 0.1}s` }}
         >
-          <div className="flex items-start space-x-3 p-3 rounded-xl hover:bg-white/5 transition-all duration-300 group-hover/skill:bg-white/10">
+          <div className="flex items-start space-x-3 p-3 rounded-xl hover:bg-[var(--glass-bg)] transition-all duration-300 group-hover/skill:bg-[var(--glass-bg)]">
             {/* Animated bullet point */}
             <div className="relative mt-2 flex-shrink-0">
               <div
@@ -46,7 +46,7 @@ const SkillList: React.FC<SkillListProps> = ({ icon, title, gradient, skills }) 
               ></div>
             </div>
 
-            <p className="text-gray-300 leading-relaxed group-hover/skill:text-gray-200 transition-colors duration-300 text-sm">
+            <p className="text-[var(--muted)] leading-relaxed group-hover/skill:text-[var(--foreground)] transition-colors duration-300 text-sm">
               {skill}
             </p>
           </div>

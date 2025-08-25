@@ -30,7 +30,8 @@ export const dynamic = 'force-dynamic';
 const Home = () => {
   const highlights = homeHighlights.map((h) => ({
     ...h,
-    icon: renderIcon(h.iconName, 'w-8 h-8 text-white'),
+    // Use theme token for icon color
+    icon: renderIcon(h.iconName, 'w-8 h-8 text-[var(--foreground)]'),
   }));
   const stats = homeStats;
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || 'http://localhost:3000';
@@ -105,7 +106,7 @@ const Home = () => {
             <h1 id="home-hero-title" className="text-3xl md:text-5xl font-bold tracking-tight">
               Building low-latency, AI-powered products
             </h1>
-            <p className="mt-4 md:mt-6 text-base md:text-xl text-gray-300 leading-relaxed animate-fade-in-scale">
+            <p className="mt-4 md:mt-6 text-base md:text-xl text-[var(--muted)] leading-relaxed animate-fade-in-scale">
               Senior Software Engineer with{' '}
               <span className="gradient-text font-semibold">12+ years </span>
               delivering real-time collaboration, high-performance UI, and production ML
@@ -114,7 +115,7 @@ const Home = () => {
             <div className="mt-4 flex justify-center">
               <span
                 aria-label="Open to remote work"
-                className="text-xs md:text-sm text-gray-200 bg-white/5 px-3 py-1 rounded-full border border-white/10"
+                className="text-xs md:text-sm text-[var(--muted)] px-3 py-1 rounded-full border bg-[var(--glass-bg)] border-[var(--glass-border)]"
               >
                 Open to remote work
               </span>
@@ -129,16 +130,18 @@ const Home = () => {
             {highlights.map((highlight) => (
               <article
                 key={highlight.title}
-                className="glass-card p-6 rounded-2xl border border-white/10 hover:border-white/20 transition-all duration-300 group hover:scale-[1.02]"
+                className="glass-card p-6 rounded-2xl border border-[var(--border)] hover:border-[var(--border-strong)] transition-all duration-300 group hover:scale-[1.02]"
               >
                 <div
                   className={`w-16 h-16 bg-gradient-to-br ${highlight.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}
                   aria-hidden="true"
                 >
-                  {highlight.icon}
+                  <div className="on-gradient">{highlight.icon}</div>
                 </div>
-                <h2 className="text-lg font-semibold text-white mb-2">{highlight.title}</h2>
-                <p className="text-gray-400 text-sm">{highlight.description}</p>
+                <h2 className="text-lg font-semibold text-[var(--foreground)] mb-2">
+                  {highlight.title}
+                </h2>
+                <p className="text-[var(--muted)] text-sm">{highlight.description}</p>
               </article>
             ))}
           </div>
@@ -148,7 +151,7 @@ const Home = () => {
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Link
                 href="/contact"
-                className="group px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring"
+                className="group px-8 py-4 rounded-2xl on-gradient font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring gradient-bg"
                 aria-label="Contact me"
               >
                 <span className="flex items-center gap-2">
@@ -159,7 +162,7 @@ const Home = () => {
 
               <Link
                 href="/about"
-                className="group px-8 py-4 glass-card border border-white/20 rounded-2xl text-white font-semibold text-lg hover:border-white/40 transition-all duration-300 focus-ring"
+                className="group px-8 py-4 glass-card border border-[var(--border)] hover:border-[var(--border-strong)] rounded-2xl text-[var(--foreground)] font-semibold text-lg transition-all duration-300 focus-ring"
                 aria-label="View experience"
               >
                 <span className="flex items-center gap-2">
@@ -176,8 +179,8 @@ const Home = () => {
           className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
           aria-hidden="true"
         >
-          <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-white/60 rounded-full mt-2 animate-pulse"></div>
+          <div className="w-6 h-10 border-2 rounded-full flex justify-center border-[var(--border)]">
+            <div className="w-1 h-3 rounded-full mt-2 animate-pulse bg-[var(--foreground)]/60"></div>
           </div>
         </div>
       </section>
@@ -194,7 +197,7 @@ const Home = () => {
                 <div className="text-3xl md:text-4xl font-bold gradient-text mb-2">
                   {stat.value}
                 </div>
-                <div className="text-gray-400 text-sm">{stat.label}</div>
+                <div className="text-[var(--muted)] text-sm">{stat.label}</div>
               </div>
             ))}
           </div>
@@ -208,12 +211,12 @@ const Home = () => {
             Recent Impact
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <article className="glass-card p-6 rounded-2xl border border-white/10">
+            <article className="glass-card p-6 rounded-2xl border border-[var(--border)]">
               <header className="mb-4">
                 <h3 className="text-lg font-semibold">Senior Software Engineer @ FoxyAI</h3>
-                <p className="text-gray-400 text-sm">Dec 2023 – Aug 2025</p>
+                <p className="text-[var(--muted)] text-sm">Dec 2023 – Aug 2025</p>
               </header>
-              <ul className="text-gray-300 text-sm space-y-2 list-disc list-inside">
+              <ul className="text-[var(--muted)] text-sm space-y-2 list-disc list-inside">
                 <li>
                   Built React/TypeScript dashboards for Visual Property Intelligence (scores,
                   detections, valuations).
@@ -222,12 +225,12 @@ const Home = () => {
                 <li>Optimized Canvas/WebGL pipelines to reduce UI latency and improve fidelity.</li>
               </ul>
             </article>
-            <article className="glass-card p-6 rounded-2xl border border-white/10">
+            <article className="glass-card p-6 rounded-2xl border border-[var(--border)]">
               <header className="mb-4">
                 <h3 className="text-lg font-semibold">Senior Full-Stack Engineer @ Figma</h3>
-                <p className="text-gray-400 text-sm">May 2019 – Dec 2023</p>
+                <p className="text-[var(--muted)] text-sm">May 2019 – Dec 2023</p>
               </header>
-              <ul className="text-gray-300 text-sm space-y-2 list-disc list-inside">
+              <ul className="text-[var(--muted)] text-sm space-y-2 list-disc list-inside">
                 <li>
                   Engineered real-time multiplayer editing (WebSockets, OT/CRDT-inspired, WASM
                   perf).
@@ -249,9 +252,9 @@ const Home = () => {
             Core Skills
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-card p-5 rounded-2xl border border-white/10">
+            <div className="glass-card p-5 rounded-2xl border border-[var(--border)]">
               <h3 className="font-semibold mb-3">Frontend & Rendering</h3>
-              <div className="flex flex-wrap gap-2 text-xs text-gray-300">
+              <div className="flex flex-wrap gap-2 text-xs text-[var(--muted)]">
                 <span className="glass px-2 py-1 rounded-md">React</span>
                 <span className="glass px-2 py-1 rounded-md">TypeScript</span>
                 <span className="glass px-2 py-1 rounded-md">Next.js</span>
@@ -260,9 +263,9 @@ const Home = () => {
                 <span className="glass px-2 py-1 rounded-md">WASM</span>
               </div>
             </div>
-            <div className="glass-card p-5 rounded-2xl border border-white/10">
+            <div className="glass-card p-5 rounded-2xl border border-[var(--border)]">
               <h3 className="font-semibold mb-3">Backend & Realtime</h3>
-              <div className="flex flex-wrap gap-2 text-xs text-gray-300">
+              <div className="flex flex-wrap gap-2 text-xs text-[var(--muted)]">
                 <span className="glass px-2 py-1 rounded-md">Node.js</span>
                 <span className="glass px-2 py-1 rounded-md">Python</span>
                 <span className="glass px-2 py-1 rounded-md">Express</span>
@@ -271,9 +274,9 @@ const Home = () => {
                 <span className="glass px-2 py-1 rounded-md">Stripe</span>
               </div>
             </div>
-            <div className="glass-card p-5 rounded-2xl border border-white/10">
+            <div className="glass-card p-5 rounded-2xl border border-[var(--border)]">
               <h3 className="font-semibold mb-3">AI & Visualization</h3>
-              <div className="flex flex-wrap gap-2 text-xs text-gray-300">
+              <div className="flex flex-wrap gap-2 text-xs text-[var(--muted)]">
                 <span className="glass px-2 py-1 rounded-md">GPT UX</span>
                 <span className="glass px-2 py-1 rounded-md">Computer Vision</span>
                 <span className="glass px-2 py-1 rounded-md">TensorFlow integ.</span>
@@ -292,23 +295,25 @@ const Home = () => {
             How I work
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="glass-card p-6 rounded-2xl border border-white/10">
-              <h3 className="font-semibold mb-2">Product-first delivery</h3>
-              <p className="text-sm text-gray-300">
+            <div className="glass-card p-6 rounded-2xl border border-[var(--border)]">
+              <h3 className="font-semibold mb-2 text-[var(--foreground)]">
+                Product-first delivery
+              </h3>
+              <p className="text-sm text-[var(--muted)]">
                 Partner closely with design and PM to ship high-impact features quickly and iterate
                 with real user feedback.
               </p>
             </div>
-            <div className="glass-card p-6 rounded-2xl border border-white/10">
-              <h3 className="font-semibold mb-2">Performance mindset</h3>
-              <p className="text-sm text-gray-300">
+            <div className="glass-card p-6 rounded-2xl border border-[var(--border)]">
+              <h3 className="font-semibold mb-2 text-[var(--foreground)]">Performance mindset</h3>
+              <p className="text-sm text-[var(--muted)]">
                 Profile, measure, and optimize—real-time, low-latency UI and scalable systems are my
                 default.
               </p>
             </div>
-            <div className="glass-card p-6 rounded-2xl border border-white/10">
-              <h3 className="font-semibold mb-2">Ownership & quality</h3>
-              <p className="text-sm text-gray-300">
+            <div className="glass-card p-6 rounded-2xl border border-[var(--border)]">
+              <h3 className="font-semibold mb-2 text-[var(--foreground)]">Ownership & quality</h3>
+              <p className="text-sm text-[var(--muted)]">
                 End-to-end responsibility from data to UI; raise the bar on reliability,
                 accessibility, and maintainability.
               </p>
@@ -323,14 +328,14 @@ const Home = () => {
           <h2 id="cta-title" className="text-xl md:text-2xl font-semibold">
             Let’s build something great
           </h2>
-          <p className="text-gray-300 mt-2 text-sm md:text-base">
+          <p className="text-[var(--muted)] mt-2 text-sm md:text-base">
             Open to Senior/Staff Frontend or Full-Stack roles focused on real-time, AI, or complex
             UI.
           </p>
           <div className="mt-6 flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Link
               href="/contact"
-              className="group px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-600 rounded-2xl text-white font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring"
+              className="group px-8 py-4 rounded-2xl on-gradient font-semibold text-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 focus-ring gradient-bg"
               aria-label="Contact me"
             >
               <span className="flex items-center gap-2">
@@ -339,7 +344,7 @@ const Home = () => {
             </Link>
             <Link
               href="/about"
-              className="group px-8 py-4 glass-card border border-white/20 rounded-2xl text-white font-semibold text-lg hover:border-white/40 transition-all duration-300 focus-ring"
+              className="group px-8 py-4 glass-card border border-[var(--border)] hover:border-[var(--border-strong)] rounded-2xl text-[var(--foreground)] font-semibold text-lg transition-all duration-300 focus-ring"
               aria-label="View experience"
             >
               <span className="flex items-center gap-2">
