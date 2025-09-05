@@ -10,8 +10,8 @@ export const contactMethods = [
   {
     iconName: 'phone',
     title: 'Phone',
-    value: '425-491-2815',
-    action: 'tel:425-491-2815',
+    value: '425-565-3249',
+    action: 'tel:425-565-3249',
     gradient: 'from-green-500 to-emerald-500',
     description: 'Great for quick conversations',
   },

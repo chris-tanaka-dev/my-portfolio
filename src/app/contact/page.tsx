@@ -108,7 +108,7 @@ const Contact = () => {
                   href={method.action}
                   target={method.action.startsWith('http') ? '_blank' : undefined}
                   rel={method.action.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  className="block glass-card p-6 rounded-2xl border border-[var(--border)] shadow-2xl hover:border-[var(--border-strong)] transition-all duration-500 group hover:scale-105 interactive-card h-full"
+                  className="block glass-card p-6 rounded-2xl border border-[var(--border)] shadow-2xl hover:border-[var(--border-strong)] transition-all duration-500 group hover:scale-105 interactive-card h-full overflow-hidden"
                 >
                   <div
                     className={`w-16 h-16 bg-gradient-to-br ${method.gradient} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}
@@ -124,8 +124,11 @@ const Contact = () => {
                     {method.description}
                   </p>
 
-                  <div className="text-center">
-                    <span className="text-sm text-[var(--muted)] bg-[var(--glass-bg)] px-3 py-1 rounded-full border border-[var(--glass-border)] transition-all duration-300">
+                  <div className="text-center w-full">
+                    <span
+                      className="inline-block max-w-full truncate align-middle text-sm text-[var(--muted)] bg-[var(--glass-bg)] px-3 py-1 rounded-full border border-[var(--glass-border)] transition-all duration-300"
+                      title={typeof method.value === 'string' ? method.value : undefined}
+                    >
                       {method.value}
                     </span>
                   </div>
