@@ -1,13 +1,14 @@
+import type { Metadata } from 'next';
+
 import Link from 'next/link';
+
 import { MdAutoAwesome, MdKeyboardArrowDown } from 'react-icons/md';
 
 import JsonLd from '@/components/common/JsonLd';
-
-import PageWrapper from '../components/common/PageWrapper';
-import ProfileAvatar from '../components/features/Home/ProfileAvatar';
-import { homeHighlights, homeStats } from '../lib/data/home';
-import { renderIcon } from '../lib/icons';
-import type { Metadata } from 'next';
+import PageWrapper from '@/components/common/PageWrapper';
+import ProfileAvatar from '@/components/features/Home/ProfileAvatar';
+import { homeHighlights, homeStats } from '@/lib/data/home';
+import { renderIcon } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: 'Home | Christopher Tanaka',

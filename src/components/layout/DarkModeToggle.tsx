@@ -1,7 +1,8 @@
 'use client';
 
 import { useEffect, useState } from 'react';
-import { MdLightMode, MdDarkMode } from 'react-icons/md';
+
+import { MdDarkMode, MdLightMode } from 'react-icons/md';
 
 const DarkModeToggle = () => {
   const [isLight, setIsLight] = useState(false);

@@ -1,4 +1,4 @@
-import type { BrandName, IconName } from '../icons';
+import type { BrandName, IconName } from '@/lib/icons';
 
 type ExperienceItem = {
   company: string;

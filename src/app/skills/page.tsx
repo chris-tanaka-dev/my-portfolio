@@ -1,11 +1,12 @@
-import { MdFlashOn, MdRocketLaunch, MdPalette } from 'react-icons/md';
-import JsonLd from '@/components/common/JsonLd';
-
-import PageWrapper from '../../components/common/PageWrapper';
-import SkillList from '../../components/features/Skills/SkillList';
-import { skillCategories as skillCategoriesData, proficiencyLevels } from '../../lib/data/skills';
-import { renderIcon } from '../../lib/icons';
 import type { Metadata } from 'next';
+
+import { MdFlashOn, MdPalette, MdRocketLaunch } from 'react-icons/md';
+
+import JsonLd from '@/components/common/JsonLd';
+import PageWrapper from '@/components/common/PageWrapper';
+import SkillList from '@/components/features/Skills/SkillList';
+import { proficiencyLevels, skillCategories as skillCategoriesData } from '@/lib/data/skills';
+import { renderIcon } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: 'Skills | Christopher Tanaka',

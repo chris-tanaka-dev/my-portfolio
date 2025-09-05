@@ -1,9 +1,11 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+
 import { createPortal } from 'react-dom';
-import SkillSwarm from './SkillSwarm';
-import type { SkillKey } from './TechnologyLogos';
+
+import SkillSwarm from '@/components/common/SkillSwarm';
+import type { SkillKey } from '@/components/common/TechnologyLogos';
 
 const BackgroundSkillField = () => {
   const [container, setContainer] = useState<HTMLDivElement | null>(null);

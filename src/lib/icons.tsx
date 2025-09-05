@@ -1,22 +1,23 @@
-import {
-  MdCode,
-  MdFlashOn,
-  MdRocketLaunch,
-  MdWork,
-  MdStar,
-  MdSchool,
-  MdBook,
-  MdStorage,
-  MdPsychology,
-  MdCloud,
-  MdSecurity,
-  MdEmail,
-  MdPhone,
-  MdLocationOn,
-  MdLanguage,
-} from 'react-icons/md';
-import { SiGoogle, SiFigma } from 'react-icons/si';
 import type { ReactNode } from 'react';
+
+import {
+  MdBook,
+  MdCloud,
+  MdCode,
+  MdEmail,
+  MdFlashOn,
+  MdLanguage,
+  MdLocationOn,
+  MdPhone,
+  MdPsychology,
+  MdRocketLaunch,
+  MdSchool,
+  MdSecurity,
+  MdStar,
+  MdStorage,
+  MdWork,
+} from 'react-icons/md';
+import { SiFigma, SiGoogle } from 'react-icons/si';
 
 export type IconName =
   | 'code'

@@ -1,10 +1,13 @@
+import type { ReactNode } from 'react';
+
+import type { Metadata, Viewport } from 'next';
+
 import { Geist, Geist_Mono } from 'next/font/google';
 
-import BackgroundSkillField from '../components/common/BackgroundSkillField';
-import Navbar from '../components/layout/Navbar';
+import BackgroundSkillField from '@/components/common/BackgroundSkillField';
+import Navbar from '@/components/layout/Navbar';
+
 import './globals.css';
-import type { Metadata, Viewport } from 'next';
-import type { ReactNode } from 'react';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

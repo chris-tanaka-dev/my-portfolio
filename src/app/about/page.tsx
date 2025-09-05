@@ -1,10 +1,11 @@
-import { MdCalendarToday, MdLocationOn, MdEmojiEvents, MdRocketLaunch } from 'react-icons/md';
-import JsonLd from '@/components/common/JsonLd';
-
-import PageWrapper from '../../components/common/PageWrapper';
-import { experienceData, educationData, aboutSkillCategories } from '../../lib/data/about';
-import { renderIcon, renderBrandIcon } from '../../lib/icons';
 import type { Metadata } from 'next';
+
+import { MdCalendarToday, MdEmojiEvents, MdLocationOn, MdRocketLaunch } from 'react-icons/md';
+
+import JsonLd from '@/components/common/JsonLd';
+import PageWrapper from '@/components/common/PageWrapper';
+import { aboutSkillCategories, educationData, experienceData } from '@/lib/data/about';
+import { renderBrandIcon, renderIcon } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: 'About | Christopher Tanaka',

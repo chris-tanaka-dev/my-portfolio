@@ -1,10 +1,11 @@
-import { MdSend, MdChat, MdCoffee } from 'react-icons/md';
-import JsonLd from '@/components/common/JsonLd';
-
-import PageWrapper from '../../components/common/PageWrapper';
-import { contactMethods as contactMethodsData } from '../../lib/data/contact';
-import { renderIcon } from '../../lib/icons';
 import type { Metadata } from 'next';
+
+import { MdChat, MdCoffee, MdSend } from 'react-icons/md';
+
+import JsonLd from '@/components/common/JsonLd';
+import PageWrapper from '@/components/common/PageWrapper';
+import { contactMethods as contactMethodsData } from '@/lib/data/contact';
+import { renderIcon } from '@/lib/icons';
 
 export const metadata: Metadata = {
   title: 'Contact | Christopher Tanaka',

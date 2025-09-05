@@ -1,10 +1,13 @@
 'use client';
 
+import { useEffect, useState } from 'react';
+
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
-import { MdMenu, MdClose, MdAutoAwesome } from 'react-icons/md';
-import DarkModeToggle from './DarkModeToggle';
+
+import { MdAutoAwesome, MdClose, MdMenu } from 'react-icons/md';
+
+import DarkModeToggle from '@/components/layout/DarkModeToggle';
 
 const navLinks = [
   { href: '/', label: 'Home', icon: '🏠' },
