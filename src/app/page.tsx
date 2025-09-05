@@ -25,8 +25,6 @@ export const metadata: Metadata = {
   },
 };
 
-export const dynamic = 'force-dynamic';
-
 const Home = () => {
   const highlights = homeHighlights.map((h) => ({
     ...h,
