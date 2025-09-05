@@ -13,3 +13,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === '' ? 1 : 0.8,
   }));
 }
+
+export const revalidate = 86400;

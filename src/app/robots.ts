@@ -13,3 +13,5 @@ export default function robots(): MetadataRoute.Robots {
     host: baseUrl,
   };
 }
+
+export const revalidate = 86400;

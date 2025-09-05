@@ -25,7 +25,7 @@ export const metadata: Metadata = {
   },
 };
 
-export const dynamic = 'force-dynamic';
+export const revalidate = 86400;
 
 const About = () => {
   const exps = experienceData.map((e) => ({
